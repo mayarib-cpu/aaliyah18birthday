@@ -50,18 +50,18 @@
             vertical-align: top;
             text-align: left;
             overflow: hidden;
-            margin: 0; /* Ensure no extra space around the items */
-            height: auto; /* Allow the height to adjust based on content */
+            margin: 0;
+            height: auto;
         }
         img, video {
             max-width: 100%;
             border-radius: 10px;
             display: block;
-            margin-top: 10px; /* Add a little space below the image/video */
+            margin-top: 10px;
         }
         p {
             word-wrap: break-word;
-            margin-bottom: 10px; /* Add spacing between text and media */
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -79,45 +79,88 @@
     <div class="gallery" id="gallery"></div>
     
     <script>
+        // Function to load saved submissions from localStorage
+        function loadSubmissions() {
+            const savedSubmissions = JSON.parse(localStorage.getItem("submissions")) || [];
+            const gallery = document.getElementById("gallery");
+
+            savedSubmissions.forEach(submission => {
+                const item = document.createElement("div");
+                item.classList.add("item");
+
+                let content = `<p><strong>${submission.name}</strong></p>`;
+                if (submission.message) {
+                    content += `<p>${submission.message}</p>`;
+                }
+
+                submission.files.forEach(fileUrl => {
+                    const fileType = fileUrl.startsWith("data:image") ? "image" : "video";
+                    if (fileType === "image") {
+                        content += `<img src="${fileUrl}" alt="Image">`;
+                    } else if (fileType === "video") {
+                        content += `<video controls><source src="${fileUrl}" type="video/*"></video>`;
+                    }
+                });
+
+                item.innerHTML = content;
+                gallery.appendChild(item);
+            });
+        }
+
+        // Function to save the submissions to localStorage
+        function saveSubmission(submission) {
+            const savedSubmissions = JSON.parse(localStorage.getItem("submissions")) || [];
+            savedSubmissions.push(submission);
+            localStorage.setItem("submissions", JSON.stringify(savedSubmissions));
+        }
+
         function submitForm() {
             const name = document.getElementById("name").value;
             const message = document.getElementById("message").value;
             const fileInput = document.getElementById("file");
-            
+
             if (!name) {
                 alert("Please enter your name!");
                 return;
             }
-            
+
             const gallery = document.getElementById("gallery");
-            
             let content = `<p><strong>${name}</strong></p>`;
             if (message) {
                 content += `<p>${message}</p>`;
             }
-            
-            // Loop through all selected files
+
+            const files = [];
+            // Loop through all selected files and generate URLs for them
             for (let i = 0; i < fileInput.files.length; i++) {
                 const file = fileInput.files[i];
                 const url = URL.createObjectURL(file);
+                files.push(url);
                 if (file.type.startsWith("image")) {
                     content += `<img src="${url}" alt="Image">`;
                 } else if (file.type.startsWith("video")) {
                     content += `<video controls><source src="${url}" type="${file.type}"></video>`;
                 }
             }
-            
-            // Create and append the item
+
+            // Create and append the item to the gallery
             const item = document.createElement("div");
             item.classList.add("item");
             item.innerHTML = content;
             gallery.appendChild(item);
-            
-            // Clear input fields
+
+            // Save the submission to localStorage
+            const submission = { name, message, files };
+            saveSubmission(submission);
+
+            // Clear input fields but NOT the file input
             document.getElementById("name").value = "";
             document.getElementById("message").value = "";
             document.getElementById("file").value = "";
         }
+
+        // Load the saved submissions when the page loads
+        window.onload = loadSubmissions;
     </script>
 </body>
 </html>
