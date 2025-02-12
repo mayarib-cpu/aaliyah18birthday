@@ -46,10 +46,18 @@
             padding: 10px;
             border-radius: 10px;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            vertical-align: top;
+            text-align: left;
+            overflow: hidden; /* Prevent overflow of content */
         }
         img, video {
             max-width: 100%;
             border-radius: 10px;
+            display: block; /* Ensures images/videos are block-level elements */
+        }
+        p {
+            word-wrap: break-word; /* Ensures long words break into multiple lines */
         }
     </style>
 </head>
