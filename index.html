@@ -2,7 +2,6 @@
 <html>
 <head>
     <style>
-        /* All your existing styles are correct and can stay the same */
         body {
             background-color: #FFE5F4;
             margin: 0;
@@ -126,30 +125,27 @@
             <div class="message-card">
                 <p class="message-text">Wishing you all the joy and happiness! May all your dreams come true! 🎉</p>
                 <p class="message-author">- M</p>
-	<div class="message-card">
-    	<p class="message-text">[Happiest birthdayyyyy aaaaliyaahhh]</p>
-    	<p class="message-author">- [M]</p>
-	</div>
+            </div> <!-- Corrected closing div -->
+            <div class="message-card">
+                <p class="message-text">[Happiest birthdayyyyy aaaaliyaahhh]</p>
+                <p class="message-author">- [M]</p>
             </div>
         </div>
     </div>
-    
-   
-<!-- Photo & Video Memories Section -->
-<div class="content-section">
-    <h2 class="section-title">Photo & Video Memories</h2>
 
-    <!-- Google Photos Embed Script -->
-    <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
+    <!-- Photo & Video Memories Section -->
+    <div class="content-section">
+        <h2 class="section-title">Photo & Video Memories</h2>
 
-    <!-- Google Photos Album Embed -->
-    <div class="pa-gallery-player-widget" style="width:100%; height:480px; display:none;"
-        data-link="https://photos.app.goo.gl/EX5KxfdsLUUa7Wc26"
-        data-title="Aaliyah Birthday"
-        data-description="New items added to shared album">
+        <!-- Google Photos Embed Script -->
+        <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
+
+        <!-- Google Photos Album Embed -->
+        <div class="pa-gallery-player-widget" style="width:100%; height:480px; display:block;"
+            data-link="https://photos.app.goo.gl/EX5KxfdsLUUa7Wc26"
+            data-title="Aaliyah Birthday"
+            data-description="New items added to shared album">
+        </div>
     </div>
-</div>
-
-
 </body>
 </html>
