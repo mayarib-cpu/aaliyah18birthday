@@ -8,36 +8,20 @@
     <link rel="stylesheet" href="style.css">
     <style>
         body {
-            background-color: #fef4e8;
-            font-family: Arial, sans-serif;
-            position: relative;
-            overflow-x: hidden;
+            text-align: center;
+            background-color: #fff8e1;
         }
 
-        /* Star background */
+        header {
+            padding: 20px;
+            background-color: #ffcc80;
+            border-radius: 10px;
+        }
+
         .stars {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .stars span {
-            position: absolute;
-            width: 5px;
-            height: 5px;
-            background: gold;
-            box-shadow: 0 0 10px gold;
-            border-radius: 50%;
-            animation: twinkle 2s infinite alternate;
-        }
-
-        @keyframes twinkle {
-            0% { opacity: 0.3; transform: scale(0.8); }
-            100% { opacity: 1; transform: scale(1.2); }
+            font-size: 30px;
+            color: gold;
+            margin: 10px 0;
         }
 
         .gallery {
@@ -45,122 +29,92 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 10px;
-            padding: 20px;
+            max-width: 90%;
+            margin: auto;
         }
 
         .image-container {
-            width: calc(20% - 20px); /* 5 images per row */
+            width: calc(20% - 20px);
+            margin: 10px;
             text-align: center;
-            background: white;
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .image-container img {
             width: 100%;
             height: auto;
             border-radius: 10px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #d63384;
-        }
-
-        p {
-            text-align: center;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
         }
 
         .form-container {
-            text-align: center;
-            margin-top: 20px;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #ffcc80;
+            border-radius: 10px;
+            display: inline-block;
         }
 
         button {
-            background: #ff69b4;
+            background-color: #ff6f61;
             color: white;
-            border: none;
             padding: 10px 20px;
+            border: none;
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
         }
 
         button:hover {
-            background: #d63384;
+            background-color: #e64a19;
         }
 
         footer {
-            text-align: center;
             margin-top: 20px;
             padding: 10px;
-            background: #fff;
-            box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffcc80;
+            border-radius: 10px;
         }
     </style>
 </head>
 
 <body>
     <header>
-        <h1>✨ Happy Birthday, Aaliyah! ✨</h1>
+        <h1>🎉 Happy Birthday, Aaliyah! 🎂</h1>
         <p>Welcome to Aaliyah's 18th Birthday Gallery!</p>
+        <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
     </header>
-
-    <!-- Stars Effect -->
-    <div class="stars">
-        <script>
-            for (let i = 0; i < 50; i++) {
-                let star = document.createElement("span");
-                star.style.top = Math.random() * 100 + "vh";
-                star.style.left = Math.random() * 100 + "vw";
-                star.style.animationDelay = Math.random() * 2 + "s";
-                document.querySelector(".stars").appendChild(star);
-            }
-        </script>
-    </div>
 
     <section class="gallery">
         <div class="image-container">
             <img src="https://raw.githubusercontent.com/mayarib-cpu/AALIYAHBIRTHDAY1/main/WhatsApp%20Image%202025-02-05%20at%2012.59.41%20PM.jpeg" alt="Aaliyah Image 1">
-            <div class="wishes">
-                <p><strong>cutest baby in the whole world</strong></p>
-            </div>
+            <div class="wishes"><p><strong>cutest baby in the whole world</strong></p></div>
         </div>
         <div class="image-container">
             <img src="https://raw.githubusercontent.com/mayarib-cpu/AALIYAHBIRTHDAY1/main/WhatsApp%20Image%202025-02-12%20at%209.41.42%20PM.jpeg" alt="Aaliyah Image 2">
-            <div class="wishes">
-                <p><strong>Happy birthday to the brightest star in the sky!</strong></p>
-            </div>
+            <div class="wishes"><p><strong>Happy birthday to the brightest star in the sky!</strong></p></div>
         </div>
         <div class="image-container">
             <img src="https://raw.githubusercontent.com/mayarib-cpu/AALIYAHBIRTHDAY1/main/WhatsApp%20Image%202025-02-12%20at%209.41.45%20PM.jpeg" alt="Aaliyah Image 3">
-            <div class="wishes">
-                <p><strong>From Muskaan</strong></p>
-            </div>
+            <div class="wishes"><p><strong>From Muskaan</strong></p></div>
         </div>
         <div class="image-container">
             <img src="https://raw.githubusercontent.com/mayarib-cpu/AALIYAHBIRTHDAY1/main/WhatsApp%20Image%202025-02-12%20at%209.41.46%20PM.jpeg" alt="Aaliyah Image 4">
-            <div class="wishes">
-                <p><strong>From Muskaan</strong></p>
-            </div>
+            <div class="wishes"><p><strong>From Muskaan</strong></p></div>
         </div>
         <div class="image-container">
             <img src="https://raw.githubusercontent.com/mayarib-cpu/aaliyah18birthday/main/raya.jpeg.png" alt="Aaliyah Image 5">
-            <div class="wishes">
-                <p><strong>Happy birthday Aaliyah Niaz! We love you</strong> - Raya</p>
-            </div>
+            <div class="wishes"><p><strong>Happy birthday Aaliyah Niaz! We love you</strong> - Raya</p></div>
         </div>
         <div class="image-container">
             <img src="https://raw.githubusercontent.com/mayarib-cpu/aaliyah18birthday/main/download.jpg" alt="Aaliyah Image 6">
-            <div class="wishes">
-                <p><strong>Shining brighter every year!</strong></p>
-            </div>
+        </div>
+        <div class="image-container">
+            <img src="https://github.com/mayarib-cpu/aaliyah18birthday/blob/main/WhatsApp%20Image%202025-02-12%20at%209.41.38%20PM.jpeg?raw=true" alt="Aaliyah Image 7">
         </div>
     </section>
 
     <section class="form-container">
-        <h2>Submit Your Birthday Wishes! 🎉</h2>
+        <h2>Submit Your Birthday Wishes! 🎈</h2>
         <p>Click the link below to submit your message to Aaliyah:</p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSekFCViam5AXFu4M1ei-guU0q1Amarm98SzZFpJ3xf8e0dG6w/viewform?usp=header" target="_blank">
             <button>Submit Your Wish</button>
@@ -168,10 +122,8 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Aaliyah's Birthday Gallery</p>
+        <p>&copy; 2025 Aaliyah's Birthday Gallery ⭐️</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 
 </html>
