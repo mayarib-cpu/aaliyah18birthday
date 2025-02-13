@@ -3,16 +3,15 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #f0f0f0;
     color: #333;
-    overflow: hidden; /* Prevents scrollbars due to animated stars */
 }
 
 header {
-    background-color: #ff69b4;
+    background-color: #ff4081;
     color: white;
-    padding: 40px;
     text-align: center;
+    padding: 50px 0;
 }
 
 header h1 {
@@ -22,195 +21,88 @@ header h1 {
 
 header p {
     font-size: 1.2em;
-    margin-top: 10px;
+    margin: 0;
 }
 
 /* Gallery Styles */
 .gallery {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     gap: 20px;
+    flex-wrap: wrap;
     padding: 20px;
+    background-color: #fff;
 }
 
 .image-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    position: relative;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .image-container img {
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
-}
-
-.image-container img:hover {
-    transform: scale(1.05);
 }
 
 .wishes {
-    margin-top: 10px;
-    font-size: 1.1em;
-    color: #555;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 .wishes p {
-    margin: 5px 0;
-    font-style: italic;
+    margin: 0;
 }
 
 /* Form Styles */
 .form-container {
     text-align: center;
-    padding: 40px;
+    padding: 20px;
+    background-color: #ffeb3b;
 }
 
-.form-container h2 {
-    font-size: 2.5em;
-    color: #ff69b4;
+.form-container textarea {
+    width: 80%;
+    max-width: 500px;
+    padding: 10px;
+    font-size: 1em;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
-.form-container p {
-    font-size: 1.2em;
-}
-
-button {
-    padding: 15px;
-    font-size: 1.5em;
+.form-container button {
+    background-color: #ff4081;
     color: white;
-    background-color: #ff69b4;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
+    font-size: 1.1em;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-button:hover {
-    background-color: #ff1493;
+.form-container button:hover {
+    background-color: #f50057;
 }
 
 /* Footer Styles */
 footer {
     text-align: center;
-    padding: 20px;
     background-color: #333;
     color: white;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    padding: 10px 0;
+    font-size: 0.9em;
 }
 
-/* Stars Animation */
-@keyframes twinkle {
-    0% {
-        opacity: 0.3;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.2);
-    }
-    100% {
-        opacity: 0.3;
-        transform: scale(1);
-    }
+footer p {
+    margin: 0;
 }
-
-/* Starry Background */
-body {
-    position: relative;
-    background-color: #111;
-}
-
-.star {
-    position: absolute;
-    background-color: white;
-    border-radius: 50%;
-    animation: twinkle 2s infinite ease-in-out;
-}
-
-.star:nth-child(odd) {
-    animation-duration: 1.5s;
-}
-
-.star:nth-child(even) {
-    animation-duration: 2.5s;
-}
-
-.star:nth-child(1) {
-    top: 20%;
-    left: 10%;
-    width: 5px;
-    height: 5px;
-}
-
-.star:nth-child(2) {
-    top: 80%;
-    left: 50%;
-    width: 3px;
-    height: 3px;
-}
-
-.star:nth-child(3) {
-    top: 60%;
-    left: 30%;
-    width: 7px;
-    height: 7px;
-}
-
-.star:nth-child(4) {
-    top: 40%;
-    left: 70%;
-    width: 4px;
-    height: 4px;
-}
-
-.star:nth-child(5) {
-    top: 10%;
-    left: 90%;
-    width: 6px;
-    height: 6px;
-}
-
-.star:nth-child(6) {
-    top: 50%;
-    left: 20%;
-    width: 5px;
-    height: 5px;
-}
-
-.star:nth-child(7) {
-    top: 90%;
-    left: 60%;
-    width: 8px;
-    height: 8px;
-}
-
-.star:nth-child(8) {
-    top: 30%;
-    left: 40%;
-    width: 3px;
-    height: 3px;
-}
-
-.star:nth-child(9) {
-    top: 80%;
-    left: 80%;
-    width: 4px;
-    height: 4px;
-}
-
-.star:nth-child(10) {
-    top: 20%;
-    left: 60%;
-    width: 5px;
-    height: 5px;
-}
-
-/* Add more stars by adding more <div class="star"></div> in HTML */
