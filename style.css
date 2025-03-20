@@ -1,137 +1,18 @@
-/* Basic reset and body styles */
-body {
-    font-family: "Times New Roman", Times, serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #ffedf2;
-    text-align: center;
-}
-
-/* Header section */
-.header {
-    padding: 20px;
-    margin-bottom: 30px;
-    animation: fadeIn 2s;
-}
-
-h1 {
-    color: #ff1493;
-    font-size: 3rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-/* Star animation */
-.star {
-    color: gold;
-    font-size: 24px;
-    animation: twinkle 1.5s infinite;
-}
-
-@keyframes twinkle {
-    0% { opacity: 0.5; }
-    50% { opacity: 1; }
-    100% { opacity: 0.5; }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Gallery grid layout */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 25px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Individual gallery items */
-.gallery-item {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.gallery-item:hover {
-    transform: translateY(-5px);
-}
-
+/* Ensure image size is appropriate */
 .gallery-item img {
-    width: 100%;
+    width: 150px; /* Adjust size as needed */
     height: auto;
-    border-radius: 8px;
-    margin-bottom: 12px;
+    border-radius: 50%; /* Makes the image round */
+    display: block;
+    margin: 0 auto 12px; /* Centers image and adds space below */
 }
 
-/* Text styles */
-.name {
-    color: #ff1493;
-    font-weight: bold;
-    font-size: 1.2em;
-    margin: 10px 0;
-}
-
+/* Keep the text neatly formatted */
 .message {
     color: #666;
     font-style: italic;
-    line-height: 1.4;
-}
-
-/* Submit button */
-.submit-button {
-    background-color: #ff1493;
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 25px;
-    font-size: 1.1em;
-    cursor: pointer;
-    margin: 20px;
-    transition: background-color 0.3s ease;
-}
-
-.submit-button:hover {
-    background-color: #ff69b4;
-}
-
-/* Loading animation for images */
-.gallery-item img {
-    opacity: 0;
-    animation: fadeIn 0.5s ease forwards;
-}
-
-/* Responsive design */
-@media (max-width: 600px) {
-    h1 {
-        font-size: 2rem;
-    }
-    
-    .gallery {
-        grid-template-columns: 1fr;
-        padding: 10px;
-    }
-    
-    .gallery-item {
-        margin: 10px;
-    }
-}
-
-/* Link styles */
-a {
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: none;
-}
-
-/* Optional: Smooth scrolling for the whole page */
-html {
-    scroll-behavior: smooth;
+    line-height: 1.6;
+    max-width: 400px; /* Prevents text from stretching too wide */
+    margin: 0 auto; /* Centers text */
+    text-align: center;
 }
