@@ -16,10 +16,13 @@
 }
 
 .wishes {
-    max-width: 700px; /* Increases the width so text doesn’t break awkwardly */
-    width: 100%; /* Allows it to adjust dynamically */
-    text-align: center;
-    font-size: 1.1em;
-    word-wrap: break-word; /* Ensures text stays within bounds */
-    padding: 10px;
+    display: block;
+    font-size: 1.2em;
+    max-width: 90%;
+    width: auto;
+    padding: 15px;
+    line-height: 1.5; /* Improves readability */
+    word-wrap: break-word;
+    overflow-wrap: break-word; /* Prevents awkward breaks */
+}
 }
