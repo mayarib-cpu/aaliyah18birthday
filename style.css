@@ -25,4 +25,13 @@
     word-wrap: break-word;
     overflow-wrap: break-word; /* Prevents awkward breaks */
 }
+.text-container {
+    max-width: 100%;
+    padding: 10px;
+    font-size: 1.1em;
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
 }
